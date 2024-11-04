@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import TodoList from "./todolist";
 
-
 const Home = () => {
   const [tasks, setTasks] = useState([]);
   const [inputValue, setInputValue] = useState("");
@@ -20,7 +19,7 @@ const Home = () => {
 
   return (
     <div className="container mt-5">
-      <h1 className="text-center">todos</h1>
+      <h1 className="text-center">to-dos</h1>
       <div className="input-group mb-3">
         <input
           type="text"
@@ -32,8 +31,10 @@ const Home = () => {
         />
       </div>
       <TodoList tasks={tasks} handleDeleteTask={handleDeleteTask} />
+      <p className="task-counter">{tasks.length} {tasks.length === 1 ? "tarea pendiente" : "tareas pendientes"}</p>
     </div>
   );
 };
 
 export default Home;
+
