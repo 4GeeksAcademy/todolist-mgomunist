@@ -32,6 +32,9 @@ const Home = () => {
       </div>
       <TodoList tasks={tasks} handleDeleteTask={handleDeleteTask} />
       <p className="task-counter">{tasks.length} {tasks.length === 1 ? "tarea pendiente" : "tareas pendientes"}</p>
+	  {tasks.length === 0 && (
+        <p className="text-center text-muted">No hay tareas, añadir tareas.</p>
+      )}
     </div>
   );
 };
